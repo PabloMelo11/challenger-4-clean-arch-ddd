@@ -70,10 +70,3 @@ test('Deve criar um pedido com 3 itens e gerar um código seguindo o padrão AAA
   const order = new Order('935.411.347-80', new Date('2021-03-01T10:00:00'));
   expect(order.code.value).toBe('202100000001');
 });
-
-test('Ao fazer um pedido, a quantidade de um item não pode ser negativa', function () {
-  const order = new Order('935.411.347-80', new Date('2021-03-10T10:00:00'));
-  expect(() => order.addItem(new Item(1, 'Guitarra', 1000), -1)).toThrow(
-    new Error('Quantity invalid')
-  );
-});

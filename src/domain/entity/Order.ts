@@ -24,7 +24,6 @@ export default class Order {
   }
 
   addItem(item: Item, quantity: number) {
-    if (quantity < 0) throw new Error('Quantity invalid');
     this.freight.addItem(item, quantity);
     this.orderItems.push(new OrderItem(item.idItem, item.price, quantity));
   }
